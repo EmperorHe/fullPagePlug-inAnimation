@@ -1,0 +1,435 @@
+#fp-nav ul li a span{
+    background: springgreen;
+}
+body html .section{
+    /*屏幕缩放的最小宽度和高度，防止变形*/
+    min-height: 600px;
+    min-width: 1000px;
+}
+/*右上角直接进入固定图片*/
+.go{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 999;
+}
+.next{
+    position: fixed;
+    bottom: 120px;
+    right: 20%;
+    z-index: 99;
+    animation: next_updown 2s linear infinite;
+}
+/*設置每個頁面的背景樣式*/
+
+/*----------------------------------------第一屏样式设置---------------------------------------------------*/
+.section1{
+    /*图片放在背景颜色上面，防止覆盖    位置为    左右  上下*/
+    background: #fadd67 url(../images/t1fpyqfltdxxaiulhh-990-600.png) no-repeat center bottom;  /*center表示左右居中，bottom表示上下局下*/
+}
+.fly{
+    position: absolute;
+    right: 20%;
+    top: 10%;
+}
+.shirt01{
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    bottom: 335px;
+}
+.goods{
+    position: absolute;
+    left: 50%;
+    margin-left: -420px;
+    bottom: 150px;
+}
+
+/*----------------------------------------第二屏样式设置---------------------------------------------------*/
+.section2{
+    background: #84a2d4 url(../images/t1zdgpfi8exxca6rfn-2000-600.png) no-repeat center bottom;
+    z-index: 2;
+}
+.computer{
+    width: 990px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    /* margin-left: 495px; */
+    transform: translateX(-50%);   /*transform:translateX(-50%)等价于 margin-left: -自身宽度的一半*/
+    bottom: 0;
+    /*background: rgba(0,0,0,0.3);*/
+}
+.search{
+    width: 222px;
+    height: 45px;
+    background: url("../images/search.png") no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: 300px;
+    display: none;     /*css中用display，jQuery中用show和hide与之对应。用animate无效*/
+}
+.search-words{
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    opacity: 0;   /*透明度为0，方便后面做淡入淡出效果*/
+}
+.search-02-1{
+    position: absolute;
+    right: 370px;
+    bottom: 300px;
+    display: none;
+}
+.goods-02{
+    height: 100px;
+    position: absolute;
+    bottom: 217px;
+    right: 270px;
+    display: none;
+}
+.word-02{
+    position: absolute;
+    bottom: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.shirt-02 {
+    position: absolute;
+    bottom: 345px;
+    left: 395px;
+    width: 102px;
+    display: none;
+    /*这里表示沙发的层级比白色块更高，效果会更好*/
+    z-index: 10;
+}
+.cover{
+    position: absolute;
+    bottom: 345px;
+    left: 394px;
+    width: 104px;
+    height: 90px;
+    z-index: 5;
+    background-color: #fff;
+    display: none;
+}
+
+/*----------------------------------------第三屏样式设置---------------------------------------------------*/
+.section3{
+    background: #ef674d;
+    z-index: 1;
+}
+.main{
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    background: url(../images/main.png) no-repeat center center;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.select {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    right: 8px;
+    /* background-color: pink; */
+}
+.img{
+    position: absolute;
+    /*img在select容器当中，位置正好在top:0,left:0的位置*/
+    top: 0;
+}
+.img2{
+    opacity: 0;         /*做一个淡入淡出的效果*/
+}
+.btn {
+    position: absolute;
+    bottom: 10px;
+}
+.btn2{
+    opacity: 0;
+}
+/* 沙发 */
+.shirt-03,.t1f{
+    position: absolute;
+    left: 115px;
+    bottom: 200px;
+    display: none;
+    z-index: -1;
+}
+
+
+/*----------------------------------------第四屏样式设置---------------------------------------------------*/
+.section4{
+    background: #fed url(../images/t1iresfnxaxxca6rfn-2000-600.png) no-repeat center bottom;
+}
+.cloud{
+    position: absolute;
+    left: 50%;
+    bottom: 520px;
+}
+.word {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 500px;
+}
+.words-04-a {
+    opacity: 0;
+}
+.car{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    z-index: 10;
+    /*background-color: #fff;*/
+}
+.car-img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 200px;
+    z-index: -1;    /*这样沙发就会叠在下层*/
+    display: none;
+}
+.note{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 150px;
+    display: none;
+}
+.img-note{
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    opacity: 0;
+}
+/*----------------------------------------第五屏样式设置---------------------------------------------------*/
+.section5{
+    background: #d04759 url(../images/t1yisqfa4exxa3gmkg-2000-1500.png);
+    z-index: 1;
+}
+.words-05{
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+.card-05{
+    position: absolute;
+    left: 20%;
+    bottom: 200px;
+    z-index: 10;
+}
+.order-05 {
+    position: absolute;
+    left: 27%;
+    bottom: 270px;
+}
+.t1f-05 {
+    position: absolute;
+    bottom: 800px;
+    left: 25%;
+    display: none;
+}
+.mouse {
+    position: absolute;
+    right: 20%;
+    bottom: 200px;
+}
+.mouse-05-a {
+    opacity: 0;
+}
+.hand-05 {
+    position: absolute;
+    right: 24%;
+    bottom: -375px;
+}
+.overFlow {  /* 切掉 鼠标小尾巴 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/*----------------------------------------第六屏样式设置---------------------------------------------------*/
+.section6{
+    background: #84d9ed url(../images/t1dvj.fn0gxxb0_fua-2500-600.png) no-repeat 25% 100%;  /*水平25%，垂直100%*/
+}
+.box-06{
+    position: absolute;
+    bottom: 500px;
+    left: 123px;
+    z-index: 10;
+}
+.car-06{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    z-index: 12;
+}
+.cloud-06{
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    animation: cloud-back1 30s linear infinite;
+    z-index: 20;
+}
+.pop-06{
+    position: absolute;
+    bottom: 119px;
+    right: 48%;
+    display: none;
+    z-index: 5;
+}
+.man-06{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    height: 100px;
+    display: none;
+}
+.women-06{
+    position: absolute;
+    right: 315px;
+    bottom: 116px;
+    height: 110px;
+    display: none;
+    z-index: 10;
+}
+.door-06{
+    position: absolute;
+    right: 285px;
+    bottom: 116px;
+    opacity: 0;
+}
+.receive-06{
+    position: absolute;
+    bottom: 400px;
+    right: 35%;
+    display: none;
+}
+.words-06-a{
+    position: absolute;
+    left: 10%;
+    bottom: 450px;
+    display: none;
+}
+/*----------------------------------------第七屏样式设置---------------------------------------------------*/
+.section7{
+    background: #8ac060 url(../images/t1wf1tfctaxxa3gmkg-2000-1500.png) no-repeat 50% 100%;
+}
+.star-07 {
+    position: absolute;
+    left: 50%;
+    bottom: 439px;
+    margin-left: -295px;
+    width: 0;
+    height: 20px;
+    background: url(../images/star.png) no-repeat;
+    background-size: 97px;
+}
+.good-07 {
+    position: absolute;
+    bottom: 382px;
+    left: 50%;
+    margin-left: -289px;
+    display: none;
+}
+/*----------------------------------------第八屏样式设置---------------------------------------------------*/
+.section8{
+    background: url(../images/ksgw.png);
+}
+.beginShoping {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:365px;
+}
+.btn-08-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.again {
+    position: absolute;
+    bottom: 403px;
+    left: 50%;
+    margin-left: 240px;
+    /*cursor表示鼠标移动到该位置时的显示效果*/
+    cursor: pointer;
+}
+.hand-08 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+/*--------------------------------------------------------动画组-------------------------------------------------*/
+.updown{
+    /*fly是动画名称  3s是动画执行时间  linear是匀速执行动画 infinite是循环执行动画*/
+    animation: fly 2s linear infinite;
+}
+.shirt-updown{
+    /*css3动画 animation，其语法格式为：
+    *animation: 动画名称 动画时间 运动曲线 何时开始 播放次数 是否反方向
+    */
+    animation: shirtfly 2s linear infinite;
+}
+.cloud-back1{
+    animation: cloud-back1 20s linear infinite;
+}
+/*声明动画 名称为fly*/
+@keyframes fly {
+    0%{
+        top: 10%;
+    }
+    50%{
+        top: 15%;
+    }
+    100%{
+        top: 10%;
+    }
+}
+@keyframes shirtfly {
+    50%{
+        bottom: 350px;
+    }
+    100%{
+        bottom: 335px;
+    }
+}
+@keyframes cloud-back1 {
+    0%{
+        left: 50%;
+    }
+    50%{
+        left: 0;
+    }
+    100%{
+        left: 50%;
+    }
+}
+@keyframes next_updown {
+    0%{
+        bottom: 120px;
+    }
+    25%{
+        bottom: 100px;
+    }
+    50%{
+        bottom: 120px;
+    }
+    75%{
+        bottom: 140px;
+    }
+    100%{
+        bottom: 120px;
+    }
+}
